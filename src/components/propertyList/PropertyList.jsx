@@ -52,8 +52,8 @@ const PropertyList = () => {
       </div>
       <div className="pListItem">
         <img
-          src={hotel1}
-          alt="hotel1"
+          src={hotel2}
+          alt="hotel2"
           className="pListImg"
         />
         <div className="pListTitles">

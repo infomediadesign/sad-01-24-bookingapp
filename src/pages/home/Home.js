@@ -5,6 +5,7 @@ import Footer from '../../components/footer/Footer'
 import Featured from "../../components/featured/Featured";
 import FeaturedProperties from "../../components/featuredProperties/FeaturedProperties";
 import PropertyList from "../../components/propertyList/PropertyList";
+import MailList from "../../components/mailList/MailList";
 import "./Home.css";
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
         <PropertyList/>
         <h1 className="homeTitle">Homes guests love</h1>
         <FeaturedProperties/>
+        <MailList/>
         <Footer/>
 
         </div>

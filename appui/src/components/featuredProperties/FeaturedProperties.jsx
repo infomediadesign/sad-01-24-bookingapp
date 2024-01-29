@@ -1,15 +1,12 @@
 import "./featuredProperties.css";
-import hotel1 from './hotel1.svg';
-import hotel2 from './hotel2.svg';
-import hotel3 from './hotel3.svg';
 
 const FeaturedProperties = () => {
   return (
     <div className="fp">
       <div className="fpItem">
         <img
-          src={hotel1}
-          alt="hotel1"
+          src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
           className="fpImg"
         />
         <span className="fpName">Aparthotel Stare Miasto</span>
@@ -22,12 +19,12 @@ const FeaturedProperties = () => {
       </div>
       <div className="fpItem">
         <img
-          src={hotel2}
-          alt="hotel2"
+          src="https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
           className="fpImg"
         />
-        <span className="fpName">Comfort Suites Airport</span>
-        <span className="fpCity">Austin</span>
+        <span className="fpName">Comfort Suites</span>
+        <span className="fpCity">Austria</span>
         <span className="fpPrice">Starting from $140</span>
         <div className="fpRating">
           <button>9.3</button>
@@ -36,8 +33,8 @@ const FeaturedProperties = () => {
       </div>
       <div className="fpItem">
         <img
-          src={hotel3}
-          alt="hotel3"
+          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
           className="fpImg"
         />
         <span className="fpName">Four Seasons Hotel</span>
@@ -48,7 +45,20 @@ const FeaturedProperties = () => {
           <span>Excellent</span>
         </div>
       </div>
-      
+      <div className="fpItem">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="fpImg"
+        />
+        <span className="fpName">Hilton Garden Inn</span>
+        <span className="fpCity">Berlin</span>
+        <span className="fpPrice">Starting from $105</span>
+        <div className="fpRating">
+          <button>8.9</button>
+          <span>Excellent</span>
+        </div>
+      </div>
     </div>
   );
 };

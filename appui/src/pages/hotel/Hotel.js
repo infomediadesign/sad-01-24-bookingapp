@@ -14,6 +14,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import Reserve from "../../components/reserve/Reserve";
 
 // Hotel component
 const Hotel = () => {

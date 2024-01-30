@@ -30,6 +30,8 @@ mongoose.connection.on("disconnected", () => {
 
 
 //Middleware 
+app.use(express.json());
+
 app.use("/backend/auth", authRoute)
 app.use("/backend/users", usersRoute)
 app.use("/backend/hotels", hotelsRoute)
@@ -45,7 +47,7 @@ app.use("/backend/rooms", roomsRoute)
 
 
 
-app.listen(8080, () => {
+app.listen(8000, () => {
   connect();
   console.log("Connected to backend!");
 });

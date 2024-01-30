@@ -1,6 +1,7 @@
 import  express from "express";
 import Hotel from "../models/Hotel.js";
 
+
 const router = express.Router();
 
 //CREATE
@@ -56,7 +57,7 @@ router.get("/:id", async(req, res)=>{
 
 //GET ALL
 
-router.get("/", async(req, res)=>{
+router.get("/", async(req, res, next)=>{
     try{
     const hotels = await Hotel.find(req.params.id);
     res.status(200).json(hotels)

@@ -8,6 +8,10 @@ import List from "./pages/list/List"
 import Hotel from "./pages/hotel/Hotel";
 import Login from "./pages/login/LoginSignup";
 import AdminHome from "./pages/adminhome/AdminHome";
+import AdminList from "./pages/adminlist/AdminList";
+import AdminSingle from "./pages/adminsingle/AdminSingle";
+import AdminNew from "./pages/adminnew/AdminNew";
+import { productInputs, userInputs } from "./formSource";
 
 function App() {
   return (
@@ -18,6 +22,22 @@ function App() {
         <Route path ="/hotelsearch" element={<Hotel/>}></Route>
         <Route path ="/login" element={<Login/>}></Route>
         <Route path ="/adminhome" element={<AdminHome/>}></Route>
+        <Route path="users">
+              <Route index element={<AdminList />} />
+              <Route path=":userId" element={<AdminSingle />} />
+              <Route
+                path="new"
+                element={<AdminNew inputs={userInputs} title="Add New User" />}
+              />
+            </Route>
+            <Route path="products">
+              <Route index element={<AdminList />} />
+              <Route path=":productId" element={<AdminSingle />} />
+              <Route
+                path="new"
+                element={<AdminNew inputs={productInputs} title="Add New Product" />}
+              />
+            </Route>
         </Routes>   
     </BrowserRouter>
   );

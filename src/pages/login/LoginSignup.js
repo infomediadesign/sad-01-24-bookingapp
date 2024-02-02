@@ -1,48 +1,60 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
-import "./login.css"
-import {
-  faEnvelope,
-  faKey,
-  faUser,
-} from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+import "./login.css";
 
-function LoginSignup() {
+const Login = () => {
+  const [credentials, setCredentials] = useState({
+    username: undefined,
+    password: undefined,
+  });
 
-  const [action, setAction] = useState("Login")
+  const { loading, error, dispatch } = useContext(AuthContext);
+
+  const navigate = useNavigate()
+
+  const handleChange = (e) => {
+    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+  };
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    dispatch({ type: "LOGIN_START" });
+    try {
+      const res = await axios.post("/auth/login", credentials);
+      dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      navigate("/")
+    } catch (err) {
+      dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
+    }
+  };
+
+
   return (
-    <div className='loginContainer'>
-    <div className='loginHeader'> 
-      <div className='loginText'>{action}</div>
-      <div className='loginInputs'>
-      {action==="Login"?<div></div> : <div className='loginInput'>
-      <FontAwesomeIcon icon={faUser} className='loginImg'/>
-      <input type='Text' placeholder='Name'></input>
-        </div> }
-      
-
-        <div className='loginInput'>
-      <FontAwesomeIcon icon={faEnvelope} className='loginImg'/>
-    <input type='email' placeholder='Email Id'></input>
-        </div> 
-
-        <div className='loginInput'>
-      <FontAwesomeIcon icon={faKey} className='loginImg'/>
-    <input type='password' placeholder='Password'></input>
-        </div> 
-
-      </div>
-      {action==="Sign Up"?<div></div> : <div className='forget-passoword'>Forget passoword ?  
-      <span>click here</span></div> }
-      <div className='submit-container'>
-        <div className={action==="Login"?"loginSubmit gray" : "loginSubmit"} onClick={()=>{setAction('Sign Up')}}>Sign Up</div>
-        <div className={action==="Sign Up"?"loginSubmit gray" : "loginSubmit"} onClick={()=>{setAction('Login')}}>Login</div>
+    <div className="login">
+      <div className="lContainer">
+        <input
+          type="text"
+          placeholder="username"
+          id="username"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <input
+          type="password"
+          placeholder="password"
+          id="password"
+          onChange={handleChange}
+          className="lInput"
+        />
+        <button disabled={loading} onClick={handleClick} className="lButton">
+          Login
+        </button>
+        {error && <span>{error.message}</span>}
       </div>
     </div>
+  );
+};
 
-    </div>
-  
-  )
-}
-
-export default LoginSignup
+export default Login;

@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 import authRoute from "./routes/auth.js"
 import hotelsRoute from "./routes/hotels.js"
 import usersRoute from "./routes/users.js"
-import roomsRoute from "./routes/rooms.js"
+import roomsRoute from "./routes/rooms.js";
+
 
 
 const app = express();

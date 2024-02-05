@@ -4,6 +4,7 @@ import "./adminhome.scss";
 import AdminWidget from "../../components/adminwidget/AdminWidget";
 import AdminFeatured from "../../components/adminfeatured/AdminFeatured";
 import AdminChart from "../../components/adminchart/AdminChart";
+import AdminTable from "../../components/admintable/AdminTable";
 
 const Home = () => {
   return (
@@ -21,8 +22,12 @@ const Home = () => {
           <AdminFeatured />
           <AdminChart title="Last 6 Months (Revenue)" aspect={2 / 1} />
         </div>
+        <div className="listContainer">
+          <div className="listTitle">Latest Transactions</div>
+          <AdminTable />
+          </div>
       </div>
-    // </div>
+     </div>
   );
 };
 

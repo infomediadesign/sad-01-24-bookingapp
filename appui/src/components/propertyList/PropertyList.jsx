@@ -2,7 +2,9 @@ import "./propertyList.css";
 import useFetch from "../../hooks/useFetch";
 
 const PropertyList = () => {
-  const { data, loading, error } = useFetch("/hotels/countByType");
+  // Generate random numbers for hotels
+  const randomHotelCount = () => Math.floor(Math.random() * 1000) + 100;
+
   return (
     <div className="pList">
       <div className="pListItem">
@@ -13,7 +15,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Hotels</h1>
-          <h2>233 hotels</h2>
+          <h2>{randomHotelCount()} hotels</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -24,7 +26,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Apartments</h1>
-          <h2>2331 hotels</h2>
+          <h2>{randomHotelCount()} apartments</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -35,7 +37,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Resorts</h1>
-          <h2>2331 hotels</h2>
+          <h2>{randomHotelCount()} resorts</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -46,7 +48,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Villas</h1>
-          <h2>2331 hotels</h2>
+          <h2>{randomHotelCount()} villas</h2>
         </div>
       </div>
       <div className="pListItem">
@@ -57,7 +59,7 @@ const PropertyList = () => {
         />
         <div className="pListTitles">
           <h1>Cabins</h1>
-          <h2>2331 hotels</h2>
+          <h2>{randomHotelCount()} cabins</h2>
         </div>
       </div>
     </div>

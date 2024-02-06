@@ -5,7 +5,7 @@ import './featured.css';
 const Featured = () => {
   const [citiesData, setCitiesData] = useState([]);
 
-  const { data, loading, error } = useFetch('/hotels/countByCity?cities=paris,germany,austria');
+  const { data, loading, error } = useFetch("/hotels/countByCity?cities=Berlin,Madrid,London");
 
   useEffect(() => {
     if (data && data.length === 3) {
@@ -14,9 +14,9 @@ const Featured = () => {
   }, [data]);
 
   const cityItems = [
-    { name: 'Paris', imgSrc: 'https://images.unsplash.com/photo-1609971757431-439cf7b4141b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-    { name: 'Germany', imgSrc: 'https://images.unsplash.com/photo-1587330979470-3595ac045ab0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
-    { name: 'Austria', imgSrc: 'https://images.unsplash.com/photo-1520503922584-590e8f7a90d7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { name: 'Berlin', imgSrc: 'https://images.unsplash.com/photo-1587330979470-3595ac045ab0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { name: 'Madrid', imgSrc: 'https://images.unsplash.com/photo-1574556462575-eb106a5865a0?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+    { name: 'London', imgSrc: 'https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
   ];
 
   return (

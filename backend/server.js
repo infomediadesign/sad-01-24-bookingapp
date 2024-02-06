@@ -33,10 +33,11 @@ mongoose.connection.on("disconnected", () => {
 //Middleware 
 app.use(express.json());
 
-app.use("/backend/auth", authRoute)
-app.use("/backend/users", usersRoute)
-app.use("/backend/hotels", hotelsRoute)
-app.use("/backend/rooms", roomsRoute)
+app.use("/api/auth", authRoute);
+app.use("/api/users", usersRoute);
+app.use("/api/hotels", hotelsRoute);
+app.use("/api/rooms", roomsRoute);
+
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;

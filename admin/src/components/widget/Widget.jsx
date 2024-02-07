@@ -1,13 +1,12 @@
+import React from 'react';
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
 const Widget = ({ type }) => {
   let data;
-
   //temporary
   const amount = 100;
   const diff = 20;
@@ -31,9 +30,9 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "BOOKINGS",
         isMoney: false,
-        link: "View all orders",
+        link: "View all bookings",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -58,24 +57,12 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "balance":
-      data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "purple",
-            }}
-          />
-        ),
-      };
-      break;
     default:
       break;
+  }
+
+  if (!data) {
+    return null; // Return null if the type doesn't match any of the cases
   }
 
   return (
@@ -83,7 +70,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          {data.isMoney && "€"} {amount}
         </span>
         <span className="link">{data.link}</span>
       </div>

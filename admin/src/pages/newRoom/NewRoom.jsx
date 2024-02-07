@@ -20,9 +20,9 @@ const NewRoom = () => {
 
   const handleClick = async (e) => {
     e.preventDefault();
-    const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
+    
     try {
-      await axios.post(`/rooms/${hotelId}`, { ...info, roomNumbers });
+      await axios.post(`/rooms/${hotelId}`, { ...info });
     } catch (err) {
       console.log(err);
     }
@@ -51,13 +51,7 @@ const NewRoom = () => {
                   />
                 </div>
               ))}
-              <div className="formInput">
-                <label>Rooms</label>
-                <textarea
-                  onChange={(e) => setRooms(e.target.value)}
-                  placeholder="give comma between room numbers."
-                />
-              </div>
+              
               <div className="formInput">
                 <label>Choose a hotel</label>
                 <select

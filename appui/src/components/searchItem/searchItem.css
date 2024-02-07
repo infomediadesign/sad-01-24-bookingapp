@@ -30,7 +30,7 @@
 /* Header Section */
 .siTitle {
   font-size: 20px;
-  color: var(--primary-color);
+  color: #112d32;
 }
 
 .siDistance {
@@ -108,7 +108,7 @@
 }
 
 .siCheckButton {
-  background-color: #0b749c;
+  background-color: #112d32;
   color: white;
   font-weight: bold;
   padding: 10px 5px;

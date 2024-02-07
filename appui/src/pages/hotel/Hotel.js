@@ -68,7 +68,6 @@ const Hotel = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
       {loading ? (
         "loading"
       ) : (

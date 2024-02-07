@@ -1,13 +1,13 @@
-
 .navbar {
-  background-image: url('C:\Users\Administrator\Desktop\sad-01-24-group-5-bookingapp\appui\src\components\images\imgcrp.jpg');
+  background-image: url('../images/imgcrp.jpg');
   background-size: cover;
   background-position: bottom;
-    height: 50px;
-    background-color: #3aafa9;
-    display: flex;
-    justify-content: center;
-  }
+  height: 50px;
+  background-color: #3aafa9;
+  display: flex;
+  justify-content: center;
+}
+
   
   .navContainer {
     width: 100%;

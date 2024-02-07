@@ -1,26 +1,17 @@
-import { useContext, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+
+import "./reserve.css";
 import useFetch from "../../hooks/useFetch";
+import { useContext, useState } from "react";
+import { SearchContext } from "../../context/SearchContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { SearchContext } from "../../context/SearchContext"; // Import SearchContext
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import FontAwesomeIcon
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons"; // Import faCircleXmark icon
 
 const Reserve = ({ setOpen, hotelId }) => {
   const [selectedRooms, setSelectedRooms] = useState([]);
-  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`); // Import useFetch hook
-  const { dates } = useContext(SearchContext); // Use SearchContext
-
-  // Define handleSelect function
-  const handleSelect = (e) => {
-    const checked = e.target.checked;
-    const value = e.target.value;
-    setSelectedRooms(
-      checked
-        ? [...selectedRooms, value]
-        : selectedRooms.filter((item) => item !== value)
-    );
-  };
+  const { data, loading, error } = useFetch(`/hotels/room/${hotelId}`);
+  const { dates } = useContext(SearchContext);
 
   const getDatesInRange = (startDate, endDate) => {
     const start = new Date(startDate);
@@ -48,6 +39,16 @@ const Reserve = ({ setOpen, hotelId }) => {
     return !isFound;
   };
 
+  const handleSelect = (e) => {
+    const checked = e.target.checked;
+    const value = e.target.value;
+    setSelectedRooms(
+      checked
+        ? [...selectedRooms, value]
+        : selectedRooms.filter((item) => item !== value)
+    );
+  };
+
   const navigate = useNavigate();
 
   const handleClick = async () => {
@@ -61,12 +62,9 @@ const Reserve = ({ setOpen, hotelId }) => {
         })
       );
       setOpen(false);
-      setShowSuccess(true); // Show pop-up on successful reservation
+      navigate("/");
     } catch (err) {}
   };
-
-  const [showSuccess, setShowSuccess] = useState(false); // State to manage pop-up visibility
-
   return (
     <div className="reserve">
       <div className="rContainer">
@@ -105,15 +103,6 @@ const Reserve = ({ setOpen, hotelId }) => {
           Reserve Now!
         </button>
       </div>
-      {/* Pop-up for successful reservation */}
-      {showSuccess && (
-        <div className="popup">
-          <div className="popup-inner">
-            <h3>Reservation Successful</h3>
-            <button onClick={() => setShowSuccess(false)}>Close</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

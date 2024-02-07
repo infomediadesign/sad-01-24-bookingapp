@@ -22,11 +22,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post("/auth/login", credentials);
-      console.log("Login successful!");
-      console.log("User details:", response.data.details);
 
-      dispatch({ type: "LOGIN_SUCCESS", payload: response.data.details });
-      navigate("/");
+      if (response.data.isAdmin) {
+        console.log("Admin login successful!");
+        console.log("Admin details:", response.data.details);
+
+        dispatch({ type: "LOGIN_SUCCESS", payload: response.data.details });
+        navigate("/");
+      } else {
+        console.error("Admin login failed: User is not an admin");
+        setLoginError(true);
+      }
     } catch (error) {
       console.error("Login failed:", error.response.data);
 

@@ -58,32 +58,14 @@ const {dispatch} = useContext(SearchContext)
           type === "list" ? "headerContainer listMode" : "headerContainer"
         }
       >
-        <div className="headerList">
-          <div className="headerListItem active">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
-          </div>
-          
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
-          </div>
-          <div className="headerListItem">
-            <FontAwesomeIcon icon={faBed} />
-            <span>Attractions</span>
-          </div>
-         
-        </div>
         {type !== "list" && (
           <>
             <h1 className="headerTitle">
-              A lifetime of discounts? It's Genius.
+              Welcome to FindyourStays !
             </h1>
             <p className="headerDesc">
-              Get for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+            Rent your favorite stays at an amazing price !
             </p>
-            <button className="headerBtn">Sign in / Register</button>
                                             
             <div className="headerSearch">
               <div className="headerSearchItem">

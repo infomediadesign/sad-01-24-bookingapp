@@ -1,10 +1,13 @@
 .header {
-  background-color: #3aafa9;
-  color: white;
+  background-image: url('C:\Users\Administrator\Desktop\sad-01-24-group-5-bookingapp\appui\src\components\images\img1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: black;
   display: flex;
   justify-content: center;
   position: relative;
 }
+
 
 .headerContainer {
   width: 100%;
@@ -39,8 +42,8 @@
 }
 
 .headerBtn {
-  background-color: #0b749c;
-  color: white;
+  background-color: #C5CBE3;
+  color: black;
   font-weight: 500;
   border: none;
   padding: 10px;
@@ -50,7 +53,7 @@
 .headerSearch {
   height: 30px;
   background-color: white;
-  border: 3px solid #2b7a78;
+  border: 3.5px solid #112d32;
   display: flex;
   align-items: center;
   justify-content: space-around;

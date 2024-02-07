@@ -38,7 +38,7 @@ const Hotel = () => {
   }
 
   const days = dates[0]?.endDate ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
-
+  
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -68,6 +68,7 @@ const Hotel = () => {
   return (
     <div>
       <Navbar />
+      <Header type="list" />
       {loading ? (
         "loading"
       ) : (

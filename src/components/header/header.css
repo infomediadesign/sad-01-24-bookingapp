@@ -1,5 +1,5 @@
 .header {
-  background-image: url('C:\Users\Administrator\Desktop\sad-01-24-group-5-bookingapp\appui\src\components\images\img1.jpg');
+  background-image: url('../images/img1.jpg');
   background-size: cover;
   background-position: center;
   color: black;

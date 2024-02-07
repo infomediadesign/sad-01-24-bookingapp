@@ -3,7 +3,7 @@ import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import EuroOutlinedIcon from '@mui/icons-material/EuroOutlined';
+import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
 
 const Widget = ({ type }) => {
   let data;
@@ -50,7 +50,7 @@ const Widget = ({ type }) => {
         isMoney: true,
         link: "View net earnings",
         icon: (
-          <EuroOutlinedIcon
+          <AttachMoneyOutlinedIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
@@ -70,7 +70,7 @@ const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">
-          {data.isMoney && "€"} {amount}
+          {data.isMoney && "$"} {amount}
         </span>
         <span className="link">{data.link}</span>
       </div>

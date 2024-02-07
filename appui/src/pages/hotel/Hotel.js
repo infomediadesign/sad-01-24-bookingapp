@@ -1,7 +1,6 @@
 import "./hotel.css";
 import React, { useContext, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
-import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Footer from "../../components/footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -68,7 +67,6 @@ const Hotel = () => {
   return (
     <div>
       <Navbar />
-      <Header type="list" />
       {loading ? (
         "loading"
       ) : (
@@ -131,10 +129,6 @@ const Hotel = () => {
               </div>
               <div className="hotelDetailsPrice">
                 <h1>Perfect for a {days}-night stay!</h1>
-                <span>
-                  Located in the real heart of Krakow, this property has an
-                  excellent location score of 9.8!
-                </span>
                 <h2>
                   <b>${days * data.cheapestPrice * options.room}</b> ({days}{" "}
                   nights)

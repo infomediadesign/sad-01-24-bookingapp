@@ -3,7 +3,7 @@ import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import EuroOutlinedIcon from '@mui/icons-material/EuroOutlined';
 
 const Widget = ({ type }) => {
   let data;
@@ -50,7 +50,7 @@ const Widget = ({ type }) => {
         isMoney: true,
         link: "View net earnings",
         icon: (
-          <MonetizationOnOutlinedIcon
+          <EuroOutlinedIcon
             className="icon"
             style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
           />
@@ -62,7 +62,7 @@ const Widget = ({ type }) => {
   }
 
   if (!data) {
-    return null; // Return null if the type doesn't match any of the cases
+    return null; 
   }
 
   return (

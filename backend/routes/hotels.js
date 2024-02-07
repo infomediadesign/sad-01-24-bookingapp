@@ -10,21 +10,21 @@ import {
   updateHotel,
 } from "../controllers/hotel.js";
 import Hotel from "../models/Hotel.js";
-import {verifyAdmin} from "../utils/verifyToken.js"
+import { verifyAdmin } from "../utils/verifyToken.js";
+
 const router = express.Router();
 
-//CREATE
+// CREATE
 router.post("/", verifyAdmin, createHotel);
 
-//UPDATE
+// UPDATE
 router.put("/:id", verifyAdmin, updateHotel);
-//DELETE
+
+// DELETE
 router.delete("/:id", verifyAdmin, deleteHotel);
-//GET
 
+// GET
 router.get("/find/:id", getHotel);
-//GET ALL
-
 router.get("/", getHotels);
 router.get("/countByCity", countByCity);
 router.get("/countByType", countByType);

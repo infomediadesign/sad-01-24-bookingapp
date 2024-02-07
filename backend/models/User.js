@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
-const UserSchema = new mongoose.Schema(
+
+const { Schema, model } = mongoose;
+
+const UserSchema = new Schema(
   {
     username: {
       type: String,
@@ -15,9 +18,6 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    img: {
-      type: String,
-    },
     city: {
       type: String,
       required: true,
@@ -30,6 +30,9 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    img: {
+      type: String,
+    },
     isAdmin: {
       type: Boolean,
       default: false,
@@ -38,4 +41,4 @@ const UserSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("User", UserSchema);
+export default model("User", UserSchema);

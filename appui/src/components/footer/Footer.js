@@ -1,51 +1,48 @@
-import "./footer.css";
+import React from 'react';
+import './footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="fLists">
-        <ul className="fList">
-          <li className="fListItem">Countries</li>
-          <li className="fListItem">Regions</li>
-          <li className="fListItem">Cities</li>
-          <li className="fListItem">Districts</li>
-          <li className="fListItem">Airports</li>
-          <li className="fListItem">Hotels</li>
+    <footer className="footer">
+      <div className="footerLists">
+        <ul className="footerList">
+          <li className="footerListItem">Destinations</li>
+          <li className="footerListItem">Accommodations</li>
+          <li className="footerListItem">Travel Guides</li>
+          <li className="footerListItem">Articles</li>
+          <li className="footerListItem">Deals</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Homes </li>
-          <li className="fListItem">Apartments </li>
-          <li className="fListItem">Resorts </li>
-          <li className="fListItem">Villas</li>
-          <li className="fListItem">Hostels</li>
-          <li className="fListItem">Guest houses</li>
+        <ul className="footerList">
+          <li className="footerListItem">Homes</li>
+          <li className="footerListItem">Apartments</li>
+          <li className="footerListItem">Resorts</li>
+          <li className="footerListItem">Villas</li>
+          <li className="footerListItem">Hostels</li>
+          <li className="footerListItem">Guest Houses</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Unique places to stay </li>
-          <li className="fListItem">Reviews</li>
-          <li className="fListItem">Unpacked: Travel articles </li>
-          <li className="fListItem">Travel communities </li>
-          <li className="fListItem">Seasonal and holiday deals </li>
+        <ul className="footerList">
+          <li className="footerListItem">Reviews</li>
+          <li className="footerListItem">Travel Communities</li>
+          <li className="footerListItem">Seasonal Deals</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Car rental </li>
-          <li className="fListItem">Flight Finder</li>
-          <li className="fListItem">Restaurant reservations </li>
-          <li className="fListItem">Travel Agents </li>
+        <ul className="footerList">
+          <li className="footerListItem">Car Rentals</li>
+          <li className="footerListItem">Flight Finder</li>
+          <li className="footerListItem">Restaurant Reservations</li>
+          <li className="footerListItem">Travel Agents</li>
         </ul>
-        <ul className="fList">
-          <li className="fListItem">Curtomer Service</li>
-          <li className="fListItem">Partner Help</li>
-          <li className="fListItem">Careers</li>
-          <li className="fListItem">Sustainability</li>
-          <li className="fListItem">Press center</li>
-          <li className="fListItem">Safety Resource Center</li>
-          <li className="fListItem">Investor relations</li>
-          <li className="fListItem">Terms & conditions</li>
+        <ul className="footerList">
+          <li className="footerListItem">Customer Service</li>
+          <li className="footerListItem">Partner Help</li>
+          <li className="footerListItem">Careers</li>
+          <li className="footerListItem">Press Center</li>
+          <li className="footerListItem">Safety Resources</li>
+          <li className="footerListItem">Investor Relations</li>
+          <li className="footerListItem">Terms & Conditions</li>
         </ul>
       </div>
-      <div className="fText">Copyright © 2024 BookingApp.</div>
-    </div>
+      <div className="footerText">© {new Date().getFullYear()} BookingApp. All rights reserved.</div>
+    </footer>
   );
 };
 

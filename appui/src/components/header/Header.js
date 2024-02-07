@@ -15,6 +15,9 @@ import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
+
+
 
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -28,12 +31,15 @@ const Header = ({ type }) => {
   ]);
   const [openOptions, setOpenOptions] = useState(false);
   const [options, setOptions] = useState({
+   
     adult: 1,
     children: 0,
     room: 1,
   });
 
-  const navigate = useNavigate();
+ 
+  const { user } = useContext(AuthContext);
+
 
   const handleOption = (name, operation) => {
     setOptions((prev) => {
@@ -44,12 +50,14 @@ const Header = ({ type }) => {
     });
   };
 
-const {dispatch} = useContext(SearchContext)
-
+  const { dispatch } = useContext(SearchContext);
+  const navigate = useNavigate();
   const handleSearch = () => {
-    dispatch({type:"NEW_SEARCH", payload:{destination,dates, options}})
+    dispatch({ type: "NEW_SEARCH", payload: { destination, dates, options } });
     navigate("/hotels", { state: { destination, dates, options } });
   };
+
+ 
 
   return (
     <div className="header">
@@ -63,7 +71,10 @@ const {dispatch} = useContext(SearchContext)
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          
+          <div className="headerListItem">
+            <FontAwesomeIcon icon={faPlane} />
+            <span>Flights</span>
+          </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
@@ -72,7 +83,10 @@ const {dispatch} = useContext(SearchContext)
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
           </div>
-         
+          <div className="headerListItem">
+            <FontAwesomeIcon icon={faTaxi} />
+            <span>Airport taxis</span>
+          </div>
         </div>
         {type !== "list" && (
           <>
@@ -80,11 +94,11 @@ const {dispatch} = useContext(SearchContext)
               A lifetime of discounts? It's Genius.
             </h1>
             <p className="headerDesc">
-              Get for your travels – unlock instant savings of 10% or
-              more with a free Lamabooking account
+              Get rewarded for your travels – unlock instant savings of 10% or
+              more with a free booking app account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
-                                            
+           
+            {!user && <button   className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />

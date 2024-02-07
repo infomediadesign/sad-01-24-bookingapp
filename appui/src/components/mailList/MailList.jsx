@@ -4,9 +4,9 @@ const MailList = () => {
   return (
     <div className="mail">
       <h1 className="mailTitle">Save time, save money!</h1>
-      <span className="mailDesc">Get the best deals sent directly to your inbox by signing up</span>
+      <span className="mailDesc">Sign up and we'll send the best deals to you</span>
       <div className="mailInputContainer">
-        <input type="text" placeholder="Enter Your Email" />
+        <input type="text" placeholder="Your Email" />
         <button>Subscribe</button>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import "./hotel.css";
-import React, { useContext, useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
@@ -11,11 +10,12 @@ import {
   faCircleXmark,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { useContext, useState } from "react";
+import useFetch from "../../hooks/useFetch";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import Reserve from "../../components/reserve/Reserve";
-import useFetch from "../../hooks/useFetch";
 
 const Hotel = () => {
   const location = useLocation();
@@ -37,8 +37,7 @@ const Hotel = () => {
     return diffDays;
   }
 
-  const days = dates[0]?.endDate ? dayDifference(dates[0].endDate, dates[0].startDate) : 0;
-
+  const days = dayDifference(dates[0].endDate, dates[0].startDate);
 
   const handleOpen = (i) => {
     setSlideNumber(i);
@@ -64,7 +63,6 @@ const Hotel = () => {
       navigate("/login");
     }
   };
-
   return (
     <div>
       <Navbar />
@@ -100,6 +98,7 @@ const Hotel = () => {
             </div>
           )}
           <div className="hotelWrapper">
+            <button className="bookNow">Reserve or Book Now!</button>
             <h1 className="hotelTitle">{data.name}</h1>
             <div className="hotelAddress">
               <FontAwesomeIcon icon={faLocationDot} />
@@ -147,7 +146,7 @@ const Hotel = () => {
           <Footer />
         </div>
       )}
-      {openModal && <Reserve setOpen={setOpenModal} hotelId={id} />}
+      {openModal && <Reserve setOpen={setOpenModal} hotelId={id}/>}
     </div>
   );
 };

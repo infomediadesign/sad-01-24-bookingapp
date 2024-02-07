@@ -1,66 +1,78 @@
+// import useFetch from "../../hooks/useFetch";
+// import "./featuredProperties.css";
+
+// const FeaturedProperties = () => {
+//   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+
+//   return (
+//     <div className="fp">
+//       {loading ? (
+//         "Loading"
+//       ) : (
+//         <>
+//           {data.map((item) => (
+//             <div className="fpItem" key={item._id}>
+//               <img
+//                 src={item.photos[0]}
+//                 alt=""
+//                 className="fpImg"
+//               />
+//               <span className="fpName">{item.name}</span>
+//               <span className="fpCity">{item.city}</span>
+//               <span className="fpPrice">Starting from ${item.cheapestPrice}</span>
+//               {item.rating && <div className="fpRating">
+//                 <button>{item.rating}</button>
+//                 <span>Excellent</span>
+//               </div>}
+//             </div>
+//           ))}
+//         </>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default FeaturedProperties;
+
+// featuredProperties.js
+
+import React from "react";
 import useFetch from "../../hooks/useFetch";
 import "./featuredProperties.css";
 
 const FeaturedProperties = () => {
+  // Custom hook to fetch data
   const { data, loading, error } = useFetch("/hotels?featured=true&limit=4");
+
+  // Handle loading state
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Handle error state
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  // Render the component with fetched data
   return (
     <div className="fp">
-      <div className="fpItem">
-        <img
-          src="https://images.unsplash.com/photo-1518733057094-95b53143d2a7?q=80&w=1930&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="fpImg"
-        />
-        <span className="fpName">Aparthotel Stare Miasto</span>
-        <span className="fpCity">Berlin</span>
-        <span className="fpPrice">Starting from $100</span>
-        <div className="fpRating">
-          <button>8</button>
-          <span>Excellent</span>
+      {data.map((item) => (
+        <div className="fpItem" key={item._id}>
+          <img src={item.photos[0]} alt="" className="fpImg" />
+          <span className="fpName">{item.name}</span>
+          <span className="fpCity">{item.city}</span>
+          <span className="fpPrice">
+            Starting from ${item.cheapestPrice}
+          </span>
+          {item.rating && (
+            <div className="fpRating">
+              <button>{item.rating}</button>
+              <span>Excellent</span>
+            </div>
+          )}
         </div>
-      </div>
-      <div className="fpItem">
-        <img
-          src="https://images.unsplash.com/photo-1529290130-4ca3753253ae?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="fpImg"
-        />
-        <span className="fpName">Comfort Suites</span>
-        <span className="fpCity">Hamburg</span>
-        <span className="fpPrice">Starting from $150</span>
-        <div className="fpRating">
-          <button>9.6</button>
-          <span>Exceptional</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="fpImg"
-        />
-        <span className="fpName">Four Seasons Hotel</span>
-        <span className="fpCity">Munich</span>
-        <span className="fpPrice">Starting from $300</span>
-        <div className="fpRating">
-          <button>8.8</button>
-          <span>Excellent</span>
-        </div>
-      </div>
-      <div className="fpItem">
-        <img
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt=""
-          className="fpImg"
-        />
-        <span className="fpName">Hilton Garden Inn</span>
-        <span className="fpCity">Frankfrut</span>
-        <span className="fpPrice">Starting from $200</span>
-        <div className="fpRating">
-          <button>8.9</button>
-          <span>Excellent</span>
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

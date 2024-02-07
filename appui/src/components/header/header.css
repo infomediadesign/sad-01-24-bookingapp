@@ -1,5 +1,5 @@
 .header {
-  background-color: #3aafa9;
+  background-color: #003580;
   color: white;
   display: flex;
   justify-content: center;
@@ -39,7 +39,7 @@
 }
 
 .headerBtn {
-  background-color: #0b749c;
+  background-color: #0071c2;
   color: white;
   font-weight: 500;
   border: none;
@@ -50,7 +50,7 @@
 .headerSearch {
   height: 30px;
   background-color: white;
-  border: 3px solid #2b7a78;
+  border: 3px solid #febb02;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -78,7 +78,7 @@
 }
 
 .headerSearchText {
-  color: gray;
+  color: lightgray;
   cursor: pointer;
 }
 

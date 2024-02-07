@@ -13,7 +13,7 @@ const Signup = () => {
     city: "",
     phone: "",
   });
-  const [showSuccess, setShowSuccess] = useState(false); // State to manage pop-up visibility
+  const [showSuccess, setShowSuccess] = useState(false); 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,15 +23,15 @@ const Signup = () => {
     e.preventDefault();
     try {
       await axios.post("/auth/register", formData);
-      setShowSuccess(true); // Show pop-up on successful signup
+      setShowSuccess(true); 
     } catch (error) {
       console.error("Signup failed:", error.response.data);
     }
   };
 
   const handlePopUpClose = () => {
-    setShowSuccess(false); // Close pop-up
-    navigate("/login"); // Navigate to login page
+    setShowSuccess(false); 
+    navigate("/login"); 
   };
 
   return (
@@ -106,7 +106,6 @@ const Signup = () => {
           </button>
         </form>
       </div>
-      {/* Pop-up for successful signup */}
       {showSuccess && (
         <div className="popup">
           <div className="popup-inner">

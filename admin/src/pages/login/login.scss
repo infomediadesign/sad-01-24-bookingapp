@@ -1,6 +1,6 @@
-/* login.css */
 
 .login-container {
+  background-image: url('images/img1.jpg'); 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +12,9 @@
 .login-heading {
   margin-bottom: 20px; 
   text-align: center; 
-  font-size: 24px;
-  color: #005493; 
+  font-size: 30px;
+  color: black;
+  font-weight: bold; 
 }
 
 .login-form {
@@ -29,7 +30,7 @@
 .login-label {
   display: block;
   margin-bottom: 10px;
-  color: #333; /* Text color */
+  color: #333; 
 }
 
 .login-input {
@@ -42,7 +43,7 @@
 }
 
 .login-button {
-  background-color: #005493; /* Darker blue for the button */
+  background-color: #005493; 
   color: white;
   padding: 12px;
   border: none;
@@ -52,7 +53,7 @@
 }
 
 .login-button:hover {
-  background-color: #003366; /* Darker shade on hover */
+  background-color: #003366; 
 }
 
 .login-error {

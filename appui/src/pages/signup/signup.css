@@ -4,12 +4,18 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* Light gradient background */
+  background-image: url('images/img1.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 }
+
 
 .title {
   margin-bottom: 20px;
-  color: #005493; /* Title color */
+  color: black;
+  font-size: 18px;
+  font-weight: bold; 
 }
 
 .sContainer {
@@ -18,7 +24,7 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff; /* Form background color */
+  background-color: #ffffff; 
 }
 
 .sInput {
@@ -31,7 +37,7 @@
 .sButton {
   width: 100%;
   padding: 10px;
-  background-color: #005493; /* Button color */
+  background-color: #005493; 
   color: white;
   border: none;
   border-radius: 5px;
@@ -39,7 +45,7 @@
 }
 
 .sButton:hover {
-  background-color: #00407f; /* Darker color on hover */
+  background-color: #00407f; 
 }
 
 

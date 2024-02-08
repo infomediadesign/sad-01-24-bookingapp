@@ -1,7 +1,7 @@
 .footer{
   width: 100%;
   width: 1024px;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .fLists{
@@ -17,7 +17,7 @@
 }
 
 .fListItem{
-  margin-bottom: 11px;
-  color: #0b739c93;
+  margin-bottom: 10px;
+  color: #003580;
   cursor: pointer;
 }

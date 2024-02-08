@@ -37,7 +37,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <div className="title">
-        <h2>Booking App Sign Up!</h2>
+        <h2>Find Your Stays Sign Up!</h2>
       </div>
       <div className="sContainer">
         <form onSubmit={handleSubmit}>
